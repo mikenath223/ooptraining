@@ -1,5 +1,5 @@
 def
-  list_books(books, userSelect)
+  list_books(books, _user_select)
   book_list = ['Rapunzel', 'Oliver Twist', 'Othello', 'Romeo and Juliette']
   people = %w[John Isaac Emma Victor]
   while userSelect
@@ -11,21 +11,6 @@ def
     when 2
       puts 'The following is a list of people'
       puts people
-      break
-    when 3
-      puts "You have selected #{books}"
-      break
-    when 4
-      puts "You have selected #{books}"
-      break
-    when 5
-      puts "You have selected #{books}"
-      break
-    when 6
-      puts "You have selected #{books}"
-      break
-    when 7
-      puts 'Bye. See you next time '
       break
     end
   end

@@ -15,6 +15,6 @@ puts '============================================'
 puts "#{one}\n#{two}\n#{three}\n#{four}\n#{five}\n#{six}\n#{seven}\n "
 option = Integer(gets)
 options = [1, 2, 3, 4, 5, 6, 7]
-userSelect = options.include?(option)
-list_books(option, userSelect)
-puts 'Invalid option. Try again later' unless userSelect
+user_select = options.include?(option)
+list_books(option, user_select)
+puts 'Invalid option. Try again later' unless user_select
