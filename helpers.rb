@@ -8,6 +8,7 @@ class Helpers
     puts '5 - New rental'
     puts '6 - List a person\'s rentals.'
     puts '7 - Exit'
+    puts "\n"
   end
 
   def action(app, response)

@@ -11,18 +11,18 @@ class App
   end
 
   def list_books
-    puts 'No books added yet!' unless @books.length
-    @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    msg = puts "*******************\nNO BOOKS ADDED YET!\n*******************"
+    @books.size.zero? ? msg : @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
   end
 
   def list_people
-    @people.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
+    msg = puts "*************************\nNO PEOPLE REGISTERED YET!\n*************************"
+    list = @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
+    @people.size.zero? ? msg : list
   end
 
   def person_data
-    print 'New student? Enter [1] | New teacher Enter [2]: '
+    print 'New student? Enter [1] | New teacher? Enter [2]: '
     category = gets.chomp
     if category != '1' && category != '2'
       puts 'Invalid option'
@@ -91,13 +91,15 @@ class App
   end
 
   def list_rentals_by_id
-    print 'Person\'s ID: '
+    print "\nPerson\'s ID: "
     id = gets.chomp.to_i
 
     rentals = @rentals.filter { |rental| rental.person.id == id }
-    puts 'Rentals:'
-    rentals.each do |rental|
+    puts "\n********\nRENTALS:\n********"
+    msg = puts 'Person has not rented a book yet OR ID do not exists!'
+    list = rentals.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
     end
+    rentals.size.zero? ? msg : list
   end
 end
