@@ -11,14 +11,14 @@ class App
   end
 
   def list_books
-    msg = puts "*******************\nNO BOOKS ADDED YET!\n*******************"
-    @books.size.zero? ? msg : @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
+    msg = "*******************\nNO BOOKS ADDED YET!\n*******************"
+    @books.size.zero? ? puts(msg) : @books.each { |book| puts "Title: \"#{book.title}\", Author: #{book.author}" }
   end
 
   def list_people
-    msg = puts "*************************\nNO PEOPLE REGISTERED YET!\n*************************"
+    msg = "*************************\nNO PEOPLE REGISTERED YET!\n*************************"
     list = @people.each { |person| puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}" }
-    @people.size.zero? ? msg : list
+    @people.size.zero? ? puts(msg) : list
   end
 
   def person_data
@@ -96,10 +96,10 @@ class App
 
     rentals = @rentals.filter { |rental| rental.person.id == id }
     puts "\n********\nRENTALS:\n********"
-    msg = puts 'Person has not rented a book yet OR ID do not exists!'
+    msg = 'Person has not rented a book yet OR ID do not exists!'
     list = rentals.each do |rental|
       puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
     end
-    rentals.size.zero? ? msg : list
+    rentals.size.zero? ? puts(msg) : list
   end
 end
